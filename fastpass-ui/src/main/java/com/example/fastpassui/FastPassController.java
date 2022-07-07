@@ -1,5 +1,7 @@
 package com.example.fastpassui;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,8 @@ import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 @Controller
 public class FastPassController {
 
+	private static final Logger logger = LoggerFactory.getLogger(FastPassController.class);
+	
 	@Autowired
 	private WebClient.Builder webClientBuilder;
 
