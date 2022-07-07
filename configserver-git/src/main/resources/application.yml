@@ -1,0 +1,32 @@
+server:
+    port: 8888
+eureka:
+    instance:
+        hostname: localhost
+    client:
+        register-with-eureka: true
+        fetch-registry: true
+encrypt:
+  key: $2a$10$UoRTmGNS3FwTJig5NxJFgudSaL1Iee9s/TfrKidcPoMZwRslMl3y2
+spring:
+    application:
+        name: config-server
+    security:
+        user:
+            name: test
+            password: test
+    cloud:
+        config:
+            server:
+                encrypt:
+                    enabled: false
+                git:
+                    uri: https://github.com/ggarg0/spring-cloudconfig-tolls
+                    search-paths:
+                    - station*
+                    repos:
+                        perf:
+                            pattern: '*/perf'
+                            uri: https://github.com/ggarg0/spring-cloudconfig-tolls-perf.git
+                            search-paths:
+                            - 'station*'  
