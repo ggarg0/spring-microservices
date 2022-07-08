@@ -40,3 +40,10 @@ spring:
               - Path=/property/rate
               filters:
               - SetPath=/property/rate
+              
+    zipkin:
+        baseUrl: http://localhost:9411/
+
+    sleuth:
+        web:
+          skip-pattern: /servicestatus
